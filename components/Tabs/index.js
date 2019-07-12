@@ -21,21 +21,25 @@ axios
     const apiData = resolved.data;
     // Handles Success: here's where we get the results from server
 
-    console.log("Handles success", apiData);
+    //console.log("Handles success", apiData);
 
-    topics = apiData["topics"];
-    console.log("topics", topics);
+    const topics = apiData["topics"];
 
-    // Using for each to iterate over the topics creating a new Tab component and add it to the DOM
+    //console.log("topics", topics);
+
+    // Using forEach to iterate over the topics creating a new Tab component and add it to the DOM
+    // Use forEach to iterate over array topics
     topics.forEach(topic => {
+      // Create new tab component
       newTab = createTabs(topic);
+      // Add to DOM
       tabs.appendChild(newTab);
     });
   })
 
   .catch(error => {
     // Handles failure:
-    console.log("The API is currently down, try again later ", error);
+    //console.log("The API is currently down, try again later ", error);
   });
 
 // Creating function
