@@ -10,15 +10,23 @@
 
 
 
-// send GET request using axios
+// select the main dom node to attach our dynamic content
 
+const tabs = document.querySelector(".tabs");
+
+// send GET request using axios
 axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
 
   .then(data => {
     // Handles Success: here's where we get the results from server
-    //console.log("Handles success", data);
-   
+    console.log("Handles success", data);
+    const apiData = data.data;
+    
+    // select the main dom node to attach our dynamic content
+const tabs = document.querySelector(".tabs");
+    tabs.appendChild(apiData);
+
   })
 
   .catch(error => {
@@ -26,5 +34,6 @@ axios
     console.log("The API is currently down, try again later", error);
   });
 
+  
 
 
