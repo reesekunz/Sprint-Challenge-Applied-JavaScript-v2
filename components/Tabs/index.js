@@ -12,7 +12,7 @@
 
 // select the main dom node to attach our dynamic content
 
-const tabs = document.querySelector(".tabs");
+const tabs = document.querySelector(".topics");
 
 // send GET request using axios
 axios
@@ -24,7 +24,7 @@ axios
     const apiData = data.data;
     
     // select the main dom node to attach our dynamic content
-const tabs = document.querySelector(".tabs");
+const tabs = document.querySelector(".topics");
     tabs.appendChild(apiData);
 
   })
@@ -34,6 +34,6 @@ const tabs = document.querySelector(".tabs");
     console.log("The API is currently down, try again later", error);
   });
 
-  
+
 
 
