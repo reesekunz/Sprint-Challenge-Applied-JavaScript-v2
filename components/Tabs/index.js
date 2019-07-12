@@ -18,14 +18,16 @@ const tabs = document.querySelector(".topics");
 axios
   .get("https://lambda-times-backend.herokuapp.com/topics")
 
-  .then(data => {
+  .then(resolved=> {
     // Handles Success: here's where we get the results from server
-    console.log("Handles success", data);
-    const apiData = data.data;
-    
-    // select the main dom node to attach our dynamic content
+    const apiData = resolved.data;
+    console.log("Handles success", apiData['topics']);
+   
+
+// select the main dom node to attach our dynamic content
 const tabs = document.querySelector(".topics");
-    tabs.appendChild(apiData);
+
+tabs.appendChild(apiData);
 
   })
 
@@ -42,13 +44,7 @@ const tabs = document.querySelector(".topics");
   const topics = document.createElement("div");
   const title = document.createElement("span");
   
-/* <!-- TABS COMPONENT, PLACE TABS HERE-->
-  <div class="tabs">
-  <div class="topics">
-    <span class="title">TRENDING TOPICS:</span>
-  </div>
-</div>
-*/
+
 
 //set the styles based off classes in HTML 
 
@@ -57,8 +53,12 @@ topics.classList.add("topics");
  
 
 // set the content based off API info
-  title.textContent = topic.topics;
+title.textContent = topic;
 
-  
- 
+// put together based off HTML parent/child
+ tabs.appendChild(topics);
+ topics.appendChild(title);
 
+ return tabs;
+
+  }
