@@ -34,6 +34,22 @@ const tabs = document.querySelector(".topics");
     console.log("The API is currently down, try again later", error);
   });
 
+  
+  function createTabs(topic) {
+    
+// create the elements based off HTML
+  const tabs = document.createElement("div");
+  const topics = document.createElement("div");
+  const title = document.createElement("span");
+  
+/* <!-- TABS COMPONENT, PLACE TABS HERE-->
+  <div class="tabs">
+  <div class="topics">
+    <span class="title">TRENDING TOPICS:</span>
+  </div>
+</div>
+
+
 
 
 
