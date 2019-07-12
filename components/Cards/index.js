@@ -51,32 +51,54 @@ axios
 });
 });
 })
-
-/* From Tabs JS for reference 
-  .catch(error => {
+.catch(error => {
     // Handles failure:
     console.log("The API is currently down, try again later ", error);
   });
 
-// Creating function
 
-function createTabs(topic) {
-  // create the elements based off HTML
-  const tabs = document.createElement("div");
-  const topics = document.createElement("div");
-  const title = document.createElement("span");
+  function createCards(topic) {
 
-  //set the styles based off classes in HTML
+// create the elements based off HTML
+const card = document.createElement("div");
+const headLine = document.createElement("div");
+const author = document.createElement("div");
+const imageContainer = document.createElement("div");
+const image = document.createElement("img");
+const authorName = document.createElement("span");
 
-  tabs.classList.add("tabs");
-  topics.classList.add("topics");
+//set the styles based off classes in HTML
 
-  // set the content based off API info
-  title.textContent = `${topic}`;
+card.classList.add("card");
+headline.classList.add("headline");
+author.classList.add("author");
+imageContainer.classList.add("img-container");
 
-  // put together based off HTML parent/child
-  tabs.appendChild(topics);
-  topics.appendChild(title);
+// set the content based off API info
+//title.textContent = `${topic}`;
 
-  return tabs;
-}
+// put together based off HTML parent/child
+//tabs.appendChild(topics);
+//topics.appendChild(title);
+
+//return tabs;
+
+
+
+
+
+
+
+
+  }
+
+  // <div class="card">
+//   <div class="headline">{Headline of article}</div>
+//   <div class="author">
+//     <div class="img-container">
+//       <img src={url of authors image} />
+//     </div>
+//     <span>By {authors name}</span>
+//   </div>
+// </div>
+//

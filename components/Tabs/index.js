@@ -30,7 +30,7 @@ axios
     // Using forEach to iterate over the topics creating a new Tab component and add it to the DOM
     // Use forEach to iterate over array topics
     topics.forEach(topic => {
-      // Create new tab component
+      // Create new tab component in reference to function being created below 
       newTab = createTabs(topic);
       // Add to DOM
       tabs.appendChild(newTab);
