@@ -7,3 +7,24 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+
+
+// send GET request using axios
+
+axios
+  .get("https://lambda-times-backend.herokuapp.com/topics")
+
+  .then(data => {
+    // Handles Success: here's where we get the results from server
+    //console.log("Handles success", data);
+   
+  })
+
+  .catch(error => {
+    // Handles failure:
+    console.log("The API is currently down, try again later", error);
+  });
+
+
+

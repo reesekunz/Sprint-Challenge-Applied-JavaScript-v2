@@ -8,9 +8,10 @@
 //    <span class="temp">98°</span>
 //  </div >
 
+// Add to DOM in the .header-container component
 const headerContainer = document.querySelector(".header-container");
+headerContainer.appendChild(Header());
 
-// creates and returns DOM node
 
 function Header() {
   // create the elements based off HTML
@@ -38,6 +39,4 @@ function Header() {
   return headerClass;
 };
 
-// Add to DOM in the .header-container component
-const headerContainer = document.querySelector(".header-container");
-headerContainer.appendChild(Header);
+
