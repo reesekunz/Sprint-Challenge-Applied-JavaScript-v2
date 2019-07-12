@@ -70,35 +70,23 @@ const authorName = document.createElement("span");
 //set the styles based off classes in HTML
 
 card.classList.add("card");
-headline.classList.add("headline");
+headLine.classList.add("headline");
 author.classList.add("author");
 imageContainer.classList.add("img-container");
 
-// set the content based off API info
-//title.textContent = `${topic}`;
+//set the content based (HTML on left, API info on right)
+headline.textContent = topic.headline;
+img.src = topic.authorPhoto;
+authorName.textContent = topic.authorName;
 
 // put together based off HTML parent/child
-//tabs.appendChild(topics);
-//topics.appendChild(title);
+card.append(headLine);
+card.append(author);
+author.append(imageContainer);
+author.append(authorName);
+imgContainer.append(image);
 
-//return tabs;
-
-
-
-
-
-
-
+return card;
 
   }
 
-  // <div class="card">
-//   <div class="headline">{Headline of article}</div>
-//   <div class="author">
-//     <div class="img-container">
-//       <img src={url of authors image} />
-//     </div>
-//     <span>By {authors name}</span>
-//   </div>
-// </div>
-//

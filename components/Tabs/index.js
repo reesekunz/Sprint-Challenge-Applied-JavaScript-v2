@@ -55,7 +55,7 @@ function createTabs(topic) {
   tabs.classList.add("tabs");
   topics.classList.add("topics");
 
-  // set the content based off API info
+  // set the content based (HTML on left, API info on right)
   title.textContent = `${topic}`;
 
   // put together based off HTML parent/child
