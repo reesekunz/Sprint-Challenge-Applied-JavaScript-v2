@@ -48,8 +48,17 @@ const tabs = document.querySelector(".topics");
     <span class="title">TRENDING TOPICS:</span>
   </div>
 </div>
+*/
 
+//set the styles based off classes in HTML 
 
+tabs.classList.add("tabs");
+topics.classList.add("topics");
+ 
 
+// set the content based off API info
+  title.textContent = topic.topics;
 
+  
+ 
 
