@@ -19,7 +19,7 @@ axios
 
   .then(resolved => {
     // Handles Success: here's where we get the results from server
-    console.log("Handles success", resolved);
+    //console.log("Handles success", resolved);
 
     const topics = resolved.data.topics;
     // Use forEach to iterate over array topics
@@ -51,3 +51,4 @@ function createTabs(topic) {
 
   return tab;
 }
+

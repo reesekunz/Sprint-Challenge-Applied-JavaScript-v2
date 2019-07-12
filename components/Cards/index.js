@@ -28,26 +28,28 @@ axios
   .get(`https://lambda-times-backend.herokuapp.com/articles`)
 
   .then(resolved => {
-    const articles = resolved.data.articles;
     // Handles Success: here's where we get the results from server
+    console.log("Handles success", resolved);
 
-    //console.log("Handles success", articles);
+    const articles = resolved.data.articles;
 
-    // Use Object.keys to create array
+    // Use Object.keys to create array of article topics
     const articleTopics = Object.keys(articles);
     console.log("topics", articleTopics);
 
     //You will be creating a component for each 'article' in the list.
 
     // Use forEach to iterate through array created through Object.keys above
+
     articleTopics.forEach(topic => {
       // Use another forEach to add component for each 'article' in the list.
       articles[`${topic}`].forEach(article => {
         // Add to DOM
-        cards.append(createCards(article));
+        cards.appendChild(createCards(article));
       });
     });
   })
+
   .catch(error => {
     // Handles failure:
     console.log("The API is currently down, try again later ", error);
@@ -72,16 +74,14 @@ function createCards(topic) {
   //set the content based (HTML on left, API info on right)
   headline.textContent = topic.headline;
   image.src = topic.authorPhoto;
-  authorName.textContent = topic.authorName;
+  authorName.textContent = `By: ${topic.authorName}`;
 
   // put together based off HTML parent/child
-  card.append(headline);
-  card.append(author);
-  author.append(imageContainer);
-  author.append(authorName);
-  imageContainer.append(image);
+  card.appendChild(headline);
+  card.appendChild(author);
+  author.appendChild(imageContainer);
+  author.appendChild(authorName);
+  imageContainer.appendChild(image);
 
   return card;
 }
-
-
