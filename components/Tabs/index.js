@@ -36,31 +36,23 @@ axios
       tabs.appendChild(newTab);
     });
   })
-
-  .catch(error => {
+.catch(error => {
     // Handles failure:
-    //console.log("The API is currently down, try again later ", error);
+    console.log("The API is currently down, try again later ", error);
   });
 
 // Creating function
 
 function createTabs(topic) {
   // create the elements based off HTML
-  const tabs = document.createElement("div");
-  const topics = document.createElement("div");
-  const title = document.createElement("span");
+  const tab = document.createElement("div");
+  
 
   //set the styles based off classes in HTML
-
-  tabs.classList.add("tabs");
-  topics.classList.add("topics");
+  tab.classList.add("tab");
 
   // set the content based (HTML on left, API info on right)
-  title.textContent = `${topic}`;
+  tab.textContent = `${topic}`;
 
-  // put together based off HTML parent/child
-  tabs.appendChild(topics);
-  topics.appendChild(title);
-
-  return tabs;
-}
+  return tab;
+}; 
