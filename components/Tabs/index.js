@@ -8,26 +8,33 @@
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
 
+// select the main dom node to attach our dynamic content
+
 const tabs = document.querySelector(".topics");
 
 // send GET request using axios
 
 axios
   .get(`https://lambda-times-backend.herokuapp.com/topics`)
+
   .then(resolved => {
     const apiData = resolved.data;
+    // Handles Success: here's where we get the results from server
+
     console.log("Handles success", apiData);
 
     topics = apiData["topics"];
     console.log("topics", topics);
 
+    // Using for each to iterate over the topics creating a new Tab component and add it to the DOM
     topics.forEach(topic => {
       newTab = createTabs(topic);
-
       tabs.appendChild(newTab);
     });
   })
+
   .catch(error => {
+    // Handles failure:
     console.log("The API is currently down, try again later ", error);
   });
 
@@ -45,7 +52,7 @@ function createTabs(topic) {
   topics.classList.add("topics");
 
   // set the content based off API info
-  title.textContent = topic;
+  title.textContent = `${topic}`;
 
   // put together based off HTML parent/child
   tabs.appendChild(topics);
